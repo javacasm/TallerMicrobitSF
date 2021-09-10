@@ -272,16 +272,96 @@ Vamos a cambiar los valores para sirva para calificar aleatoriamente un examen..
 
 # 3. Más sensores de micro:bit : temperatura y luz
 
-Sensor de luz
+Vamos a usar sensores incluídos en la micro:bit: temperatura, luz y sonido.
 
-Sentencias condicionales
+Estos sensores nos da un valor continuo, es decir que puede variar entre un valor mínimo y otro máximo. Diremos que son sensores **analógicos**. Al contrario de los pulsadores que dan valores discretos, verdadero (pulsado) o falso (no pulsado). Decimos que son sensores **digitales**.
+
+Para leer sus valores usaremos bloques redondeados de la paleta **Entradas**
+
+## Reto: mostrar temperatura actual
+
+Vamos a usar lo que ya sabemos para mostrar el valor de la temperatura al pulsar el botón A
+
+![](./images/MostrarTemperatura.png)
+
+El sensor de temperatura de la micro:bit está dentro de un chip. Si lo tocamos se calentará, y tarda un poco en enfriarse.
+
+![](./images/thermometer.png)
+
+Al usar el bloque de temperatura en el emulador nos aparecerá dibujado un termómetro cuya temperatura podemos mover.
+
+![Termometro Emulador](./images/TermometroEmulador.png)
+
+## Reto: Sensor de sonido
+
+También disponemos de un sensor de sonido. Vamos a modificar el programa anterior para mostrar el nivel de sonido.
+
+## Sentencias condicionales
+
+Son unas sentencias muy útiles que nos permiten ejecutar unos bloques u otros según sea el resultado de una comparación. Por ejemplo, la comparación para expresar la pregunta "¿Hace calor?" será "¿es la temperatura mayor que 25º?"
+
+![SentenciaCondicional](./images/SentenciaCondicional.png)
+
+La encontramos, con los bloques relacionados, en la paleta **Lógica**.
+
+Vemos que tiene 3 partes:
+* La condición, que será un bloque de forma hexagonal (los posibles bloques están debajo)
+* El grupo de los bloques que ejecutaremos **SI se cumple la condición**
+* El grupo de los bloques que ejecutaremos **SI NO se cumple la condición**
+
 
 ### Reto: ¿Hace calor?
 
+Vamos a hacer que se muestre un icono u otro según la temperatura que se mida:
+* Como queremos que se esté siempre midiendo, ponemos nuestros bloques dentro de un "Para siempre"
+* Añadimos el bloque condicional
+* Añadimos un **operador <**
+![OperadorMenor](./images/OperadorMenor.png) sobre el hueco hexagonal del bloque condicional
+* Ponemos el bloque "temperatura" en el hueco redondeado de la izquierda del operador
+* Ponemos el valor de la temperatura en el hueco redondeado de la derecho del operador, por ejemplo 24
+* Añadimos el icono a mostrar si se cumple la comparación
+* Añadimos el otro bloque mostrar icono si no se cumple
+
+![ProgramaTermostato](./images/ProgramaTermostato.png)
+
+[Programa termostato](https://makecode.microbit.org/_PLxKj7f40cet)
+
+Lo probamos con el emulador y luego en real.
 
 ### Reto: Luz de entrada automática
 
+Modificar el programa anterior para que cuando cambie la luz exterior se enciendan más o menos leds de la pantalla
+
+![](./images/ControlLuminoso.png)
+
 # 4. Robot: movimientos básicos
+
+Vamos a usar el [robot DaguCat](http://www.dagurobot.com/HC014-microbit-F)
+
+![microbitCat.jpeg](./images/microbitCat.jpeg)
+
+Reto: Identificar los componentes de un robot 
+
+Detalle del robot:
+
+![](./images/detal-20190511.png)
+
+Tiene:
+
+* 2 motores
+* Sensor infrarrojo (para detectar calor)
+* 2 x Sensores  siguelineas
+* Sensor Ultrasónico.
+* Leds de colores RGB
+* Zumbador
+* Emisor y detector infrarrojo.
+* Salidas para servos.
+* Entradas/salidas analógicas/digitales.
+
+
+Para programarlo añadiremos nuevos bloques que lo controlen a Makecode, usando lo que se llama una **Extensión**, que es complemento que el fabricante del robot comparte para que podamos incluir sus bloques en el programa.
+
+La extensión de nuestro robot está en la dirección [https://github.com/bjdagurobot/bjdg_microbitCar_en](https://github.com/bjdagurobot/bjdg_microbitCar_en) (He creado una url acortada [https://bit.ly/gatoBot](bit.ly/gatoBot) para que lo copien más fácil)
 
 **CUIDADO con los movimientos que se pueden CAER**
 
