@@ -38,7 +38,7 @@ A quien responda
 
 ## ¿Qué es [micro:bit](http://microbit.org)?
 
-micro:bit es un pequeño micro-ordenador programable, diseñado para hacer fáciles y divertidos la enseñanza y aprendizaje de temática #STEAM.
+micro:bit es un pequeño micro-ordenador programable, diseñado para hacer fáciles y divertidos la enseñanza y aprendizaje de temática #STEAM y totalmente Open Source. Este es su [esquema electrónico](https://tech.microbit.org/hardware/schematic/).
 
 Nos permite trabajar la computación física, haciendo  "tocable"  el pensamiento computacional de una forma sencilla.
 
@@ -67,18 +67,17 @@ Esta es una breve descripción de su hardware:
 1. Conector de alimentación (2 x pilas 1.5V)
 1. Chip USB
 
-### Para saber más detalles v2
+### micro:bit V2
 
 ![microbit-overview-2.png](./images/microbit-overview-2.png)
 
-[Hardware](https://tech.microbit.org/hardware/)
+[Detalles del Hardware](https://tech.microbit.org/hardware/)
 
 (Tomado de [Overview de microbit.org](https://microbit.org/get-started/user-guide/overview/))
 
 # 1. Emulador: caritas, botones y textos
 
 Vamos iniciarnos en la programación con bloques de micro:bit
-
 
 Podemos programarla usando bloques con el editor **[MakeCode](https://makecode.microbit.org)**
 
@@ -118,9 +117,18 @@ Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engranaje 
 
 Hemos visto que nuestra micro:bit tiene 25 leds (5x5) en la parte delantera. Vamos a mostrar iconos.
 
-Arrastraremos 2 bloques "Mostrar icono" desde la paleta Básico (1) al Tapete (2)
+Arrastraremos 2 bloques "Mostrar icono" desde la paleta Básico (1) al Tapete (2) dentro del bloque "para siempre"
 
 ![](./images/PrimerProyectoIconos.png)
+
+Este bloque "Para siempre" hace que los bloques que tiene dentro se repitan continuamente, alternándose los iconos.
+
+Si los hubiéramos añadido a "al iniciar" sólo se realizan una vez.
+
+* **Al iniciar**: ejecuta los bloques que tiene dentro una sola vez cuando encendemos la micro:bit o cuando la reseteamos.
+* **Para siempre**: repite continuamente los bloques que tiene dentro.
+
+Podemos encontrar estos bloques en la paleta "Básico"
 
 [Proyecto: iconos](https://makecode.microbit.org/_E3Pe8zJRaXVg)
 
@@ -129,6 +137,14 @@ Damos nombre a nuestro programa "Emoticono" escribiéndolo en la caja del nombre
 ![](./images/NombrPrograma.png)
 
 Veremos como se muestran los iconos en el Simulador (3), una excelente características del entorno, que nos permite aprender a programar y usar la micro:bit antes de tener un dispositivo físico.
+
+## Reto: Ajustar el tiempo que se muestra un icono
+
+En el ejemplo anterior los iconos se muestrar consecutiva y rápidamente. Si queremos que se muestren durante un tiempo determinado, tenemos que incluir una espera entre ellos. 
+
+* Busca un bloque que nos permita realizar la espera 
+* Añade uno detrás de cada uno de los bloques "mostrar icono".
+* Selecciona el tiempo que se muestra cada uno de ellos.
 
 ## Reto: mostrar iconos distintos según el botón que pulsemos
 
@@ -159,6 +175,7 @@ Para probralo, pulsa los botones del simulador en la pantalla (¡No las teclas A
 Usa el bloque de dibujo libre para crear tus propios dibujos/iconos
 
 ![Bloque de dibujo dibre](./images/BloqueDibujoLibre.png)
+
 
 # 2. micro:bit: Caritas, botones y dado
 
@@ -218,7 +235,7 @@ Podemos alimentar la micro:bit con el cable USB conectada al PC o bien conectán
 * Conectamos las pilas para poder usar la micro:bit sin ordenador.
 * Hacemos una pregunta y los alumnos con sus micro:bit nos contestan: ¿Os gusta usar las micro:bit?
 
-## Problemas frecuentes
+## Problemas frecuentes:
 
 A veces nos encontramos con problemas para pasar el programa, porque nuestro PC no detecta a la micro:bit. Algunas de las posibles causas:
 
@@ -269,6 +286,46 @@ Vamos a mostrar al inciar el programa una ayuda al usuario, mostrando en pantall
 Vamos a cambiar los valores para sirva para calificar aleatoriamente un examen...
 
 **Hack:** Truca tu programa para que siempre apruebes...
+
+## Reto: Haciendo ruído
+
+Vamos a hacer música, usando los bloques de la paleta "Música". 
+La placa micro:bit incluye muchos sensores, vamos a usar uno de ellos, el acelerómetro, que detecta cuando la movemos.
+
+Vamos a arrastrar desde la paleta "Entrada" el bloque "si agitado" y dentro el bloque "play melody" desde la paleta "Música"
+
+![](./images/Musica.png)
+
+[Música](https://makecode.microbit.org/_Rsfe6X6vMED1)
+
+Vemos que el simulador nos indica que hace falta conectar unos cascos/altavoces. Si acercamos el ratón al simulador veremos que se mueve la placa ¡Podemos simular que la agitamos! Es un simulador muy completo.
+El simulador sonará al mover el ratón sobre la placa.
+
+Ahora descargamos el programa como antes. Si tenemos una micro:bit v2 sonará al agitarla.
+
+La versión 1 de la placa micro:bit no tiene altavoz y no sonará nuestro programa, por ello tenemos que conectar un altavoz, por ejemplo el que trae el [Kit de Iniciación a la electrónica de MonkMakes](http://www.monkmakes.com/mb_kit_es)
+
+![](./images/in_box_read_web.jpg)
+
+
+
+Usaremos 3 cables de pinzas cocodrilo para conectar el altavoz/Speaker y la micro:bit. Podemos usar cables de cualquier color, pero es mejor seguir un esquema, conectando:
+
+micro:bit| Speaker | cable
+---|---|---
+GND | GND |cable negro
+3V| 3V | cable rojo
+0|IN| cable amarillo
+
+![](./images/microbit-altavoz2.jpg)
+
+Veremos cómo suena:
+
+[![Vídeo: Reproduciendo música al agitar micro:bit](https://img.youtube.com/vi/VwGuElgN2t8/0.jpg)](https://youtu.be/VwGuElgN2t8)
+
+
+[Vídeo: Reproduciendo música al agitar micro:bit](https://youtu.be/VwGuElgN2t8)
+
 
 # 3. Más sensores de micro:bit : temperatura y luz
 
@@ -367,6 +424,11 @@ La extensión de nuestro robot está en la dirección [https://github.com/bjdagu
 
 ### Reto: moviendo adelante y atrás
 
+[Movientos adelante y atrás](https://makecode.microbit.org/_MLz0vWWh286t)
+
+![](./images/BloquesMovimientosSencillosRobot.png)
+
+
 
 ### Reto: girando
 
@@ -374,12 +436,13 @@ La extensión de nuestro robot está en la dirección [https://github.com/bjdagu
 
 ### Reto: Repitiendo movimientos
 
-
 ### Reto: Moviendo 0.5m
 
 ### Reto: Giro de 90º
 
 ### Reto: Dibujando un cuadrado
+
+### Reto: Luces e colores
 
 ## Puesta en común
 
@@ -390,15 +453,103 @@ Vamos a mostrar cómo nuestros robots hacen los cuadrados en el suelo
 
 
 
+
 # 7. STEAM Kit
 
-### Reto: Termostato
+![](./images/71heUMelX3L._AC_SL1500_.jpg)
+
+### Reto: Termostato v1
 
 ### Reto: Sistema de riego
 
 # 8. Sensores y domótica
 
-Reto
+### Reto: realiza los montajes de sistemas domóticos de la documentación del kit
+
+## Reto: Controlando corrientes y potencia externa: interruptor electrónico
+
+Vamos a empezar haciendo un sencillo circuito eléctrico con la bombilla, la pila y algunos cables:
+
+![](./images/circuitoBombilla1.jpg)
+
+
+Al conectarlo se encenderá la bombilla.
+
+Ahora vamos a hacer un sencillo interruptor hecho con cables. Sustituiremos el cable verde por 2 cables verdes. 
+
+![](./images/circuitoBombillaInterruptor.jpg)
+
+Cuando juntemos los cables verdes se cerrará el circuito y se encenderá la bombilla.
+
+Ahora vamos a insertar interruptor electrónico, un **Relé/Relay** que podremos controlar desde la programación de la micro:bit.
+Conectaremos los 2 cables verdes en la salidas **OUT** de la placa del relé. No importa cuál pongamos en cada una:
+
+![](./images/circuitoBombillaRele.jpg)
+
+El relé nos permite controlar más potencia que lo que puede hacer la micro:bit directamente.
+
+Usaremos 2 cables para conectar el Relé a la micro:bit
+
+micro:bit| Relay| cable
+---|---|---
+GND | GND |cable negro
+1| IN | cable blanco
+
+Vamos a hacer un programa para encender y apagar con los botones A y B. 
+
+* Cuando pulsemos el botón A encenderemos la salida P1 de la micro:bit
+* Cuando pulsemos el botón B apagaremos la salida P1 de la micro:bit
+
+Usaremos el bloque "Al pulsar el botón A" de la paleta "Entrada" y "escritura digital pin P1" desde la paleta "Pines" de "Avanzados". Seleccionamos "P1" y ponemos "1" para encender y "0" para apagar:
+
+![](./images/Musica-Ventilador.png)
+
+[Música + Luz](https://makecode.microbit.org/_9cCRiFb7C2ys)
+
+
+![](./images/circuitoBombillaRelemicrobit.jpg)
+
+* Descargamos el programa a la placa
+* Pulsamos el botón A y se encenderá la bombilla
+* Pulsamos el botón B y se apagará
+
+Si queremos controlar un motor/ventilador en lugar de la bombilla, sólo tenemos que sustituir la bombilla por el motor. Al cambiarlo tendremos un ventilador controlado desde un micro:bit.
+
+![Circuito para controlar un motor/ventilador](./images/circuitoVentiladorRelemicrobit.jpg)
+
+Podemos invertir el sentido de giro del ventilador, cambiando entre sí los cables del motor.
+
+## Reto: Termosto v2
+
+Un termostato es un aparato que hace algo cuando la temperatura es mayor que un valor y otra cosa cuando sea menor.
+
+Para ello vamos a usar  el bloque "Si ... entonces si no" y el bloque hexagonal "operador  >" ambos de la paleta "Lógica" 
+
+* Ponemos el bloque "Si ... entonces si no" dentro del bloque "para siempre" porque necesitamos que se esté revisando siempre esta condición
+* Añadimos el bloque hexagonal "operador >"  en la parte de la condición
+* En un lado del operador ponemos el valor de la temperatura, de la paleta "Entrada"
+* Ponemos en el otro lado el valor de la temperatura que usaremos, por ejemplo 25.
+* En caso de que la temperatura sea mayor encenderemos el ventilador con el bloque "escritura digital pin P1" a 1
+* En "si no " apagaremos el ventilador con el bloque "escritura digital pin P1" a 0
+
+
+![](./images/Musica-Ventilador-Termostato.png)
+
+
+[Proyecto: Música, Ventilador y termostato](https://makecode.microbit.org/_DzJHtaPoT4dT)
+
+Para probarlo:
+
+* Descargamos el programa
+* Tocamos el sensor de temperatura para calentarlo
+* Se encenderá el ventilador
+* Apuntamos el ventilador hacia el sensor, para enfriarlo
+* El ventilador se apaga
+
+[![Vídeo: Ventilador controlado con termostato usando micro:bit](https://img.youtube.com/vi/9PxjRF-k8-g/0.jpg)](https://youtu.be/9PxjRF-k8-g)
+
+[Vídeo: Ventilador controlado con termostato usando micro:bit](https://youtu.be/9PxjRF-k8-g)
+
 
 # 9. Comunicaciones - Radio
 
@@ -406,5 +557,25 @@ Reto
 
 ### Reto: Viendo la temperatura de fuera
 
-### Reto:
 
+# 10. Juegos
+
+### Reto: Piedra, papel o tijera
+
+![](./images/PiedraPapelTijera.png)
+
+[Programa: Piedra, papel o tijera](https://makecode.microbit.org/_0Xi5xA7gweK5)
+
+### Reto: ¿Quién tiene mejor pulso?
+
+### Reto: ¿A quién le toca?
+
+![](./images/bloquesAQuienLeToca.png)
+
+[Programa: ¿A quién le toca?](https://makecode.microbit.org/_4paTmUARmDdH)
+
+### Reto: Haciendo ruído
+
+[Haciendo ruído](https://makecode.microbit.org/_DujPH54rq0h2)
+
+![](./images/BloquesGestos.png)
