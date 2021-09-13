@@ -8,6 +8,6 @@ microbit:
 					-o  $(microbit)  \
 					Cabecera.md        \
 					Cabecera_latex.md \
-					0.Introduccion.md \
-					claseIES_ST.md \
-					HerramientasProfesor.md 
+					0.Introduccion_microbit.md \
+					1.clases_microbit.md \
+					2.HerramientasProfesor_microbit.md 
