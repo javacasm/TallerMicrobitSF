@@ -7,7 +7,7 @@ date: \today
 documentclass:
    - book
 ---
-\graphicspath{ {images/} }
+\graphicspath{ {./images/} }
 
 
 \dominitoc
